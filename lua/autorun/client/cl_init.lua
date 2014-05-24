@@ -1,3 +1,8 @@
+hook.Add( "InitPostEntity", "FullyLoaded", function()
+	net.Start( "PlayerFullyLoaded" )
+    net.SendToServer()
+end )
+
 net.Receive( "sendToPlayer", function()
     local TOP_MESSAGE_TEXT = net.ReadString()
     local BOTTOM_MESSAGE_TEXT = net.ReadString()
@@ -29,8 +34,8 @@ function drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT, TOP_MESSAGE_COLOR_V
     local topMessageTextX, topMessageTextY = topMessageText:GetSize()
     topMessageText:SetPos( ( 0-topMessageTextX ), (ScrH()/4) )
     topMessageText:SetTextColor( Color( 255, 255, 255, 255 ) )
-    topMessageText:MoveTo( (ScrW()/2)-(topMessageTextX/2), (ScrH()/4), 0.1, 15, 1 )
-    topMessageText:AlphaTo( 0, 1, 20 )
+    topMessageText:MoveTo( (ScrW()/2)-(topMessageTextX/2), (ScrH()/4), 0.1, 5, 1 )
+    topMessageText:AlphaTo( 0, 1, 10 )
     
     local bottomMessageText = vgui.Create( "DLabel" )
     bottomMessageText:SetFont( "bottomMessageText" )
@@ -40,6 +45,6 @@ function drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT, TOP_MESSAGE_COLOR_V
     local bottomMessageTextX, bottomMessageTextY = bottomMessageText:GetSize()
     bottomMessageText:SetPos( ScrW(), (ScrH()/4)+50 )
     bottomMessageText:SetTextColor( Color( 255, 255, 255, 255 ) )
-    bottomMessageText:MoveTo( (ScrW()/2)-(bottomMessageTextX/2), (ScrH()/4)+30, 0.1, 15.3, 1 )
-    bottomMessageText:AlphaTo( 0, 1, 20 )
+    bottomMessageText:MoveTo( (ScrW()/2)-(bottomMessageTextX/2), (ScrH()/4)+30, 0.1, 5.3, 1 )
+    bottomMessageText:AlphaTo( 0, 1, 10 )
 end

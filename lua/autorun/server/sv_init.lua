@@ -30,9 +30,17 @@ else
 end
 print( "Player Login Message has started and is " .. PLUGIN_ENABLED_STATUS )
 util.AddNetworkString( "sendToPlayer" )
+util.AddNetworkString( "PlayerFullyLoaded" )
 
-function PlayerJoinTeam( ply )
-	if PLUGIN_ENABLED == true then
+net.Receive( "PlayerFullyLoaded", function( _, ply )
+	if not ply.IsFullyLoaded then
+		ply.IsFullyLoaded = true
+		hook.Call( "PlayerFullyLoaded", GAMEMODE, ply )
+	end
+end )
+
+hook.Add( "PlayerFullyLoaded", "fbfs bfls", function( ply )
+    if PLUGIN_ENABLED == true then
 		playerNick = ply:Nick()
         playerSteamID = ply:SteamID()
         TOP_MESSAGE_TEXT = string.gsub( TOP_MESSAGE_TEXT, "$playername", playerNick )
@@ -47,10 +55,4 @@ function PlayerJoinTeam( ply )
 			ply:ChatPrint( TOP_MESSAGE_TEXT .. BOTTOM_MESSAGE_TEXT )
 		end
 	end
-end
-hook.Add( "PlayerJoinTeam", "playerInitialSpawn", PlayerJoinTeam )
-
-function fPlayerDisconnect( ply )
-    return false
-end
-hook.Add( "PlayerDisconnected", "playerdisconnected", fPlayerDisconnect )
+end )
