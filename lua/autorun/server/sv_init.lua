@@ -20,8 +20,6 @@ TOP_MESSAGE_TEXT = "Welcome, $playername, to"
 BOTTOM_MESSAGE_TEXT = "[insert server name here]"
 
 //DO NOT TOUCH ANYTHING PAST THIS LINE//
-//DO NOT TOUCH ANYTHING PAST THIS LINE//
-//DO NOT TOUCH ANYTHING PAST THIS LINE//
 
 resource.AddFile( "resource/fonts/ColabReg.ttf" )
 
