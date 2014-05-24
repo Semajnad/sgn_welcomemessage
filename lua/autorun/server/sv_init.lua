@@ -52,7 +52,7 @@ hook.Add( "PlayerFullyLoaded", "fbfs bfls", function( ply )
             net.WriteString( BOTTOM_MESSAGE_TEXT )
 		net.Send( ply )
 		if PRINT_IN_CHAT == true then
-			ply:ChatPrint( TOP_MESSAGE_TEXT .. BOTTOM_MESSAGE_TEXT )
+			ply:ChatPrint( TOP_MESSAGE_TEXT .. " " .. BOTTOM_MESSAGE_TEXT )
 		end
 	end
 end )
