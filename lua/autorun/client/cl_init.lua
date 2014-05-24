@@ -1,7 +1,3 @@
-//DO NOT TOUCH ANYTHING PAST THIS LINE//
-//DO NOT TOUCH ANYTHING PAST THIS LINE//
-//DO NOT TOUCH ANYTHING PAST THIS LINE//
-
 net.Receive( "sendToPlayer", function()
     local TOP_MESSAGE_TEXT = net.ReadString()
     local BOTTOM_MESSAGE_TEXT = net.ReadString()
