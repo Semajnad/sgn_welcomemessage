@@ -1,4 +1,4 @@
-welcomemessage
+Welcome Message
 ==============
 
 A simple add-on for Garry's Mod that shows a welcome message when a player logs in.
