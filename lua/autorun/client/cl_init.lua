@@ -47,9 +47,5 @@ function drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT, TOP_MESSAGE_COLOR_V
     bottomMessageText:SetTextColor( Color( 255, 255, 255, 255 ) )
     bottomMessageText:MoveTo( (ScrW()/2)-(bottomMessageTextX/2), (ScrH()/4)+30, 0.1, 5.3, 1 )
     bottomMessageText:AlphaTo( 0, 1, 10 )
-    
-    timer.Create( "removeMessages", 15, 1, function()
-        topMessageText:Remove()
-        bottomMessageText:Remove()
-    end)
+
 end
