@@ -16,12 +16,8 @@ TELL_ALL = true
 //  Change [server_name] to your servers name, or re-arrange the string to suit your needs! If you need help, just let me know!
 //  $playername = players garry's mod nickname / display name
 //  $playersteamid = players steam ID
-TOP_MESSAGE_TEXT = "Welcome $playername with steamID $playersteamid to "
-BOTTOM_MESSAGE_TEXT = "Sleepless Gaming Network"
-
-//Top and bottom message font sizes
-TOP_LINE_SIZE = 40
-BOTTOM_LINE_SIZE = 55
+TOP_MESSAGE_TEXT = "Welcome, $playername, to"
+BOTTOM_MESSAGE_TEXT = "[insert server name here]"
 
 //DO NOT TOUCH ANYTHING PAST THIS LINE//
 //DO NOT TOUCH ANYTHING PAST THIS LINE//
