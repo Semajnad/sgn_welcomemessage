@@ -6,7 +6,7 @@ end )
 net.Receive( "sendToPlayer", function()
     local TOP_MESSAGE_TEXT = net.ReadString()
     local BOTTOM_MESSAGE_TEXT = net.ReadString()
-    drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT, TOP_MESSAGE_COLOR_VALUES, BOTTOM_MESSAGE_COLOR_VALUES )
+    drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT )
 end)
 
 surface.CreateFont( "topMessageText", {
@@ -24,7 +24,7 @@ surface.CreateFont( "bottomMessageText", {
 	shadow = true,
 } )
 
-function drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT, TOP_MESSAGE_COLOR_VALUES, BOTTOM_MESSAGE_COLOR_VALUES )
+function drawMessage( TOP_MESSAGE_TEXT, BOTTOM_MESSAGE_TEXT )
 
     local topMessageText = vgui.Create( "DLabel" )
     topMessageText:SetFont( "topMessageText" )
