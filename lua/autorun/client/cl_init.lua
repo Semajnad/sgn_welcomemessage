@@ -2,7 +2,7 @@ hook.Add( "InitPostEntity", "FullyLoaded", function()
 	net.Start( "PlayerFullyLoaded" )
     net.SendToServer()
 end )
-print("Hello")
+
 net.Receive( "sendToPlayer", function()
     local TOP_MESSAGE_TEXT = net.ReadString()
     local BOTTOM_MESSAGE_TEXT = net.ReadString()
